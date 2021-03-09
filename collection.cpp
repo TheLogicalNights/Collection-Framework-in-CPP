@@ -10,13 +10,74 @@ using namespace std;
 
 typedef int BOOL;
 
+//Structure for singly linked list
 template <class T>
 struct Node
 {
 	T iData;
 	struct Node * next;
 };
+//Structure for doubly linked list
+template <class T>
+struct Node2
+{
+	T iData;
+	struct Node2 * next;
+	struct Node2 * prev;
+};
 
+template <class T>
+class DoublyLinkedList
+{
+	public:
+		struct Node2<T> * Head;
+		DoublyLinkedList()
+		{
+			Head = NULL;
+		}
+		BOOL InsertFirst(int iValue)
+		{
+			int iFlag=0;
+			struct Node2<T> *NewNode = new Node2<T>;
+			NewNode->iData = iValue;
+			NewNode->next = NULL;
+			NewNode->prev = NULL;
+			if(Head==NULL)
+			{
+				Head = NewNode;
+				iFlag = 1;
+			}
+			else
+			{
+				NewNode->next = Head;
+				Head->prev = NewNode;
+				NewNode->prev = NULL;
+				Head = NewNode;
+				iFlag = 1;
+			}
+			if(iFlag==1)
+			{
+				return TRUE;
+			}
+			else
+			{
+				return FALSE;
+			}
+		}
+		void Display()
+		{
+			cout<<"-------------------------------------------\n";
+			cout<<"Elements in Linked List are\n";
+			struct Node2<T> * Temp = Head;
+			while(Temp!=NULL)
+			{
+				cout<<"|"<<Temp->iData<<"|<=>";
+				Temp = Temp->next;
+			}
+			cout<<"|NULL|\n";
+			cout<<"-------------------------------------------\n";
+		}
+};
 template <class T>
 class SinglyLikedList
 {
@@ -976,7 +1037,22 @@ int main()
 					}//end of while-2
 					break;
 			
-			case 2 : 
+			case 2 : {
+						DoublyLinkedList<int>obj;
+						int iNo = 0;
+						cout<<"Enter a number\n";
+						cin>>iNo;
+						BOOL iRet = obj.InsertFirst(iNo);
+						if(iRet==TRUE)
+						{
+							cout<<"Done\n";
+						}
+						else
+						{
+							cout<<"Failed\n";
+						}
+						obj.Display();
+					 }
 				    break;
 			
 			case 3 : 
