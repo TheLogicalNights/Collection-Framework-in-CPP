@@ -1051,7 +1051,6 @@ int main()
 						{
 							cout<<"Failed\n";
 						}
-						obj.Display();
 					 }
 				    break;
 			
