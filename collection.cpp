@@ -1112,6 +1112,24 @@ int main()
 																cout<<"-------------------------------------------\n";
 															}
 															break;
+
+													case 2: cout<<"Enter a number that you want to insert in the linked list\n";
+															cin>>iNo;
+															bRet = obj.InsertLast(iNo);
+															if(bRet==TRUE)
+															{
+																cout<<"-------------------------------------------\n";
+																cout<<"Element added to linked list successfully\n";
+																cout<<"-------------------------------------------\n";
+															} 
+															else
+															{
+																cout<<"-------------------------------------------\n";
+																cout<<"Error : Unable add element into linked list\n";
+																cout<<"-------------------------------------------\n";
+															}
+															break;
+
 													case 7: obj.Display();
 															break;
 												}
