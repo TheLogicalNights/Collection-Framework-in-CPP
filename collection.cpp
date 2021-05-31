@@ -1038,22 +1038,57 @@ int main()
 					break;
 			
 			case 2 : {
-						DoublyLinkedList<int>obj;
-						int iNo = 0;
-						cout<<"Enter a number\n";
-						cin>>iNo;
-						BOOL iRet = obj.InsertFirst(iNo);
-						if(iRet==TRUE)
-						{
-							cout<<"Done\n";
+						while(iSelect!=0)//while-2
+						{	
+							
+							int iChoice = 1;
+							cout<<"-------------------------------------------\n";
+							cout<<"Enter your choice\n";
+							cout<<"-------------------------------------------\n";
+							cout<<"1.Linked list of integers\n2.Linked list of floating point\n3.Linked list of double\n4.Linked list of characters\n5.Linked list of String\n0.Exit\n";
+							cout<<"-------------------------------------------\n";
+							cin>>iSelect;
+							switch(iSelect)//switch-2
+							{
+								case 1: {
+											int iNo = 0;
+											DoublyLinkedList<int>obj;
+											cout<<"-------------------------------------------\n";
+											cout<<"Linked List of integers is created\n";
+											cout<<"-------------------------------------------\n"; 
+											while(iChoice!=0)//while-1
+											{
+												cout<<"1.Insert First\n2.Insert Last\n3.Insert At Position\n4.Delete First\n5.Delete Last\n6.Delete At Position\n7.Display LL\n8.Count Elements\n0.Exit\n";
+												cout<<"----------------------------\n";
+												cout<<"Enter your choice\n";
+												cin>>iChoice;
+												switch(iChoice)
+												{
+													case 1: cout<<"Enter a number that you want to insert in the linked list\n";
+															cin>>iNo;
+															bRet = obj.InsertFirst(iNo);
+															if(bRet==TRUE)
+															{
+																cout<<"-------------------------------------------\n";
+																cout<<"Element added to linked list successfully\n";
+																cout<<"-------------------------------------------\n";
+															} 
+															else
+															{
+																cout<<"-------------------------------------------\n";
+																cout<<"Error : Unable add element into linked list\n";
+																cout<<"-------------------------------------------\n";
+															}
+															break;
+													case 7: obj.Display();
+															break;
+												}
+											}
+										}
+										break;
+					 		}
 						}
-						else
-						{
-							cout<<"Failed\n";
-						}
-					 }
-				    break;
-			
+					}
 			case 3 : 
 				    break;
 			
