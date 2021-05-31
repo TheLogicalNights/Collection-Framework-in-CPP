@@ -64,6 +64,38 @@ class DoublyLinkedList
 				return FALSE;
 			}
 		}
+		BOOL InsertLast(int iValue)
+		{
+			int iFlag = 0;
+			struct Node2<T> *NewNode = new Node2<T>;
+			NewNode->iData = iValue;
+			NewNode->next = NULL;
+			NewNode->prev = NULL;
+			if(Head==NULL)
+			{
+				Head = NewNode;
+				iFlag = 1;
+			}
+			else
+			{
+				struct Node2<T> * Temp = Head;
+				while(Temp->next!=NULL)
+				{
+					Temp = Temp->next;
+				}
+				Temp->next = NewNode;
+				NewNode->prev = Temp;
+				iFlag = 1;
+			}
+			if(iFlag==1)
+			{
+				return TRUE;
+			}
+			else
+			{
+				return FALSE;
+			}
+		}
 		void Display()
 		{
 			cout<<"-------------------------------------------\n";
