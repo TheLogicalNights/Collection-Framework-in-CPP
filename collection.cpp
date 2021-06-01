@@ -110,7 +110,7 @@ class DoublyLinkedList
 			}
 			if(iPos==1)
 			{
-				this->InserFirst(iNo);
+				this->InsertFirst(iNo);
 				iFlag = 1;
 			}
 			else if(iPos==iLength+1)
@@ -121,10 +121,10 @@ class DoublyLinkedList
 			else
 			{
 				struct Node2<T> * NewNode = new Node2<T>;
-				NewNode->iData = iValue;
+				NewNode->iData = iNo;
 				NewNode->next = NULL;
 				NewNode->prev = NULL;
-				struct Node<T> * Temp = Head;
+				struct Node2<T> * Temp = Head;
 				while(iCnt!=iPos-1)
 				{
 					Temp=Temp->next;
