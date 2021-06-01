@@ -96,6 +96,55 @@ class DoublyLinkedList
 				return FALSE;
 			}
 		}
+		BOOL InsertAtPos(int iNo,int iPos)
+		{
+			int iFlag = 0;
+			int iCnt = 1;
+			int iLength = this->Count();
+			if(iPos<1 || iPos>iLength+1)
+			{
+				cout<<"-------------------------------------------\n";
+				cout<<"Error : Invalid Position...\n";
+				cout<<"-------------------------------------------\n";
+				return FALSE;
+			}
+			if(iPos==1)
+			{
+				this->InserFirst(iNo);
+				iFlag = 1;
+			}
+			else if(iPos==iLength+1)
+			{
+				this->InsertLast(iNo);
+				iFlag=1;
+			}
+			else
+			{
+				struct Node2<T> * NewNode = new Node2<T>;
+				NewNode->iData = iValue;
+				NewNode->next = NULL;
+				NewNode->prev = NULL;
+				struct Node<T> * Temp = Head;
+				while(iCnt!=iPos-1)
+				{
+					Temp=Temp->next;
+					iCnt++;
+				}
+				NewNode->next=Temp->next;
+				Temp->next->prev = NewNode;
+				Temp->next = NewNode;
+				NewNode->prev = Temp;
+				iFlag=1;
+			}
+			if(iFlag==1)
+			{
+				return TRUE;
+			}
+			else
+			{
+				return FALSE;
+			}
+		}
 		void Display()
 		{
 			cout<<"-------------------------------------------\n";
@@ -108,6 +157,17 @@ class DoublyLinkedList
 			}
 			cout<<"|NULL|\n";
 			cout<<"-------------------------------------------\n";
+		}
+		int Count()
+		{
+			int iCount = 0;
+			struct Node2<T> * Temp = Head;
+			while(Temp!=NULL)
+			{
+				iCount++;
+				Temp = Temp->next;
+			}
+			return iCount;
 		}
 };
 template <class T>
