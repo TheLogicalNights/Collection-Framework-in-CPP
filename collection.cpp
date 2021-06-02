@@ -1382,7 +1382,21 @@ int main()
 															 cout<<"Error : Unable delete element from linked list\n";
 															 cout<<"-------------------------------------------\n";
 															}
-															break; 
+															break;
+
+													case 8 : iRet = obj.Count();
+															 cout<<"-------------------------------------------\n";
+															 cout<<"There are \""<<iRet<<"\" Elements in the linked list\n";
+															 cout<<"-------------------------------------------\n";
+															 break;
+													case 0 : cout<<"-------------------------------------------\n";
+															 cout<<"Thank you for using our application\nTry another application\n";
+															 cout<<"-------------------------------------------\n";
+															 break;
+													default : cout<<"-------------------------------------------\n";
+															  cout<<"Error:Invalid choice...\n";
+															  cout<<"-------------------------------------------\n";
+															 break; 
 													case 7: obj.Display();
 															break;
 												}
