@@ -213,6 +213,59 @@ class DoublyLinkedList
 				return FALSE;
 			}
 		}
+		BOOL DeleteAtPos(int iPos)
+		{
+			int iFlag = 0;
+			int iLength = this->Count();
+			BOOL bRet = FALSE;
+			if(iPos<1 || iPos>iLength)
+			{
+				cout<<"-------------------------------------------\n";
+				cout<<"Error : Invalid Position...\n";
+				cout<<"-------------------------------------------\n";
+				return FALSE;
+			}
+			if(iPos==1)
+			{
+				bRet = this->DeleteFirst();
+				if(bRet==TRUE)
+				{
+					iFlag = 1;
+				}
+			}
+			else if(iPos==iLength)
+			{
+				bRet = this->DeleteLast();
+				if(bRet==TRUE)
+				{
+					iFlag = 1;
+				}
+			}
+			else
+			{
+				int iCnt = 1;
+				struct Node2<T> * Temp = Head;
+				struct Node2<T> * Helper = NULL;
+				while(iCnt<iPos)
+				{
+					Helper = Temp;
+					Temp = Temp->next;
+					iCnt++;
+				}
+				Helper->next = Temp->next;
+				Temp->next->prev = Temp->prev;
+				delete(Temp);
+				iFlag = 1;
+			}
+			if(iFlag==1)
+			{
+				return TRUE;
+			}
+			else
+			{
+				return FALSE;
+			}		
+		}
 		void Display()
 		{
 			cout<<"-------------------------------------------\n";
@@ -421,6 +474,7 @@ class SinglyLikedList
 		{
 			int iLength = this->Count();
 			int iFlag = 0;
+			BOOL bRet = FALSE;
 			if(iPos<1 || iPos>iLength)
 			{
 				cout<<"-------------------------------------------\n";
@@ -430,13 +484,19 @@ class SinglyLikedList
 			}
 			else if(iPos==1)
 			{
-				this->DeleteFirst();
-				iFlag=1;
+				bRet = this->DeleteFirst();
+				if(bRet==TRUE)
+				{
+					iFlag=1;
+				}
 			}
 			else if(iPos==iLength)
 			{
-				this->DeleteLast();
-				iFlag=1;
+				bRet = this->DeleteLast();
+				if(bRet==TRUE)
+				{
+					iFlag=1;
+				}
 			}
 			else
 			{
@@ -1306,6 +1366,23 @@ int main()
 															 cout<<"-------------------------------------------\n";
 															}
 															break;
+
+													case 6: cout<<"Enter position at which you want to delete element\n";
+															cin>>iPos;
+															bRet = obj.DeleteAtPos(iPos);
+															if(bRet==TRUE)
+															{
+															cout<<"-------------------------------------------\n";
+															cout<<"Element deleted from linked list successfully\n";
+															cout<<"-------------------------------------------\n";
+															} 
+															else
+															{
+															 cout<<"-------------------------------------------\n";
+															 cout<<"Error : Unable delete element from linked list\n";
+															 cout<<"-------------------------------------------\n";
+															}
+															break; 
 													case 7: obj.Display();
 															break;
 												}
