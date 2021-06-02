@@ -565,19 +565,19 @@ int main()
 		cin>>iList;
 		switch(iList)
 		{
-			case 1 :  
-					while(iSelect!=0)//while-2
-					{	
-							int iChoice = 1;
-							cout<<"-------------------------------------------\n";
-							cout<<"Enter your choice\n";
-							cout<<"-------------------------------------------\n";
-							cout<<"1.Linked list of integers\n2.Linked list of floating point\n3.Linked list of double\n4.Linked list of characters\n5.Linked list of String\n0.Exit\n";
-							cout<<"-------------------------------------------\n";
-							cin>>iSelect;
-							switch(iSelect)//switch-2
-							{
-								case 1: {
+			case 1 : { 
+						while(iSelect!=0)//while-2
+						{	
+								int iChoice = 1;
+								cout<<"-------------------------------------------\n";
+								cout<<"Enter your choice\n";
+								cout<<"-------------------------------------------\n";
+								cout<<"1.Linked list of integers\n2.Linked list of floating point\n3.Linked list of double\n4.Linked list of characters\n5.Linked list of String\n0.Exit\n";
+								cout<<"-------------------------------------------\n";
+								cin>>iSelect;
+								switch(iSelect)//switch-2
+								{
+									case 1: {
 											int iNo = 0;
 											SinglyLikedList<int>obj;
 											cout<<"-------------------------------------------\n";
@@ -707,9 +707,9 @@ int main()
 												}//end of switch-1
 											}//end of while-1
 										}		
-										break;
+											break;
 
-								case 2 :{
+									case 2 :{
 											float fNo = 0.0;
 											SinglyLikedList<float>obj;
 											cout<<"-------------------------------------------\n";
@@ -840,9 +840,9 @@ int main()
 												}
 											}
 										}
-										break;
+											break;
 
-								case 3 :{
+									case 3 :{
 											double dNo = 0.0;
 											SinglyLikedList<double>obj;
 											cout<<"-------------------------------------------\n";
@@ -973,9 +973,9 @@ int main()
 												}
 											}
 										}
-										break;
+											break;
 
-								case 4 :{
+									case 4 :{
 											char cCh = '\0';
 											SinglyLikedList<char>obj;
 											cout<<"-------------------------------------------\n";
@@ -1106,9 +1106,9 @@ int main()
 												}
 											}
 										}
-										break;
+											break;
 
-								case 5 :{
+									case 5 :{
 											string str;
 											SinglyLikedList<string>obj;
 											cout<<"-------------------------------------------\n";
@@ -1242,19 +1242,20 @@ int main()
 												}
 											}
 										}
-										break;
+											break;
 
-								case 0: cout<<"-------------------------------------------\n";
-										cout<<"Thank you for using our application\nTry another application\n";
-										cout<<"-------------------------------------------\n";
-										break;
-								default : cout<<"-------------------------------------------\n";
-										  cout<<"Error:Invalid choice...\n";
-										  cout<<"-------------------------------------------\n";
-										  break;
+									case 0: cout<<"-------------------------------------------\n";
+											cout<<"Thank you for using our application\nTry another application\n";
+											cout<<"-------------------------------------------\n";
+											break;
 
-							}//end of switch-2
-					}//end of while-2
+									default : cout<<"-------------------------------------------\n";
+											  cout<<"Error:Invalid choice...\n";
+											  cout<<"-------------------------------------------\n";
+											  break;
+								}//end of switch-2
+						}//end of while-2
+					}
 					break;
 			
 			case 2 : {
@@ -1938,13 +1939,29 @@ int main()
 											}
 										}
 										break;
+
+								case 0: cout<<"-------------------------------------------\n";
+										cout<<"Thank you for using our application\nTry another application\n";
+										cout<<"-------------------------------------------\n";
+										break;
+										
+								default : cout<<"-------------------------------------------\n";
+										  cout<<"Error:Invalid choice...\n";
+										  cout<<"-------------------------------------------\n";
+										  break;
 					 		}
 						}
 					}
-			case 3 : 
+					break;
+
+			case 3 :{
+
+					} 
 				    break;
 			
-			case 4 :
+			case 4 :{
+
+					}
 					break;
 			
 			case 0 : cout<<"-------------------------------------------\n";
