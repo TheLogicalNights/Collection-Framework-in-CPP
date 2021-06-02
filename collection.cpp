@@ -1109,7 +1109,6 @@ int main()
 										break;
 
 								case 5 :{
-											char ch = '\0';
 											string str;
 											SinglyLikedList<string>obj;
 											cout<<"-------------------------------------------\n";
@@ -1724,6 +1723,142 @@ int main()
 															 cout<<"Enter position at which you want to insert element\n";
 															 cin>>iPos;
 															 bRet = obj.InsertAtPos(cCh,iPos);
+															 if(bRet==TRUE)
+															 {
+																cout<<"-------------------------------------------\n";
+																cout<<"Element added to linked list successfully\n";
+																cout<<"-------------------------------------------\n";
+															 } 
+															 else
+															 {
+																 cout<<"-------------------------------------------\n";
+																 cout<<"Error : Unable add element into linked list\n";
+																 cout<<"-------------------------------------------\n";
+															 }
+															 break;
+
+													case 4 : bRet = obj.DeleteFirst();
+															 if(bRet==TRUE)
+															 {
+																cout<<"-------------------------------------------\n";
+																cout<<"Element deleted from linked list successfully\n";
+																cout<<"-------------------------------------------\n";
+															 } 
+															 else
+															 {
+																 cout<<"-------------------------------------------\n";
+																 cout<<"Error : Unable delete element from linked list\n";
+																 cout<<"-------------------------------------------\n";
+															 }
+															 break;
+
+													case 5 : bRet = obj.DeleteLast();
+															 if(bRet==TRUE)
+															 {
+																cout<<"-------------------------------------------\n";
+																cout<<"Element deleted from linked list successfully\n";
+																cout<<"-------------------------------------------\n";
+															 } 
+															 else
+															 {
+																 cout<<"-------------------------------------------\n";
+																 cout<<"Error : Unable delete element from linked list\n";
+																 cout<<"-------------------------------------------\n";
+															 }
+															 break;
+													case 6 : cout<<"Enter position at which you want to delete element\n";
+															 cin>>iPos;
+															 bRet = obj.DeleteAtPos(iPos);
+															 if(bRet==TRUE)
+															 {
+																cout<<"-------------------------------------------\n";
+																cout<<"Element deleted from linked list successfully\n";
+																cout<<"-------------------------------------------\n";
+															 } 
+															 else
+															 {
+																 cout<<"-------------------------------------------\n";
+																 cout<<"Error : Unable delete element from linked list\n";
+																 cout<<"-------------------------------------------\n";
+															 }
+															 break;
+													case 7 : obj.Display();
+															 break;
+
+													case 8 : iRet = obj.Count();
+															 cout<<"-------------------------------------------\n";
+															 cout<<"There are \""<<iRet<<"\" Elements in the linked list\n";
+															 cout<<"-------------------------------------------\n";
+															 break;
+													case 0 : cout<<"-------------------------------------------\n";
+															 cout<<"Thank you for using our application\nTry another application\n";
+															 cout<<"-------------------------------------------\n";
+															 break;
+													default : cout<<"-------------------------------------------\n";
+															  cout<<"Error:Invalid choice...\n";
+															  cout<<"-------------------------------------------\n";
+															 break;
+												}
+											}
+										}
+										break;
+
+								case 5: {
+											string str;
+											SinglyLikedList<string>obj;
+											cout<<"-------------------------------------------\n";
+											cout<<"Linked List of string is created\n";
+											cout<<"-------------------------------------------\n"; 
+											while(iChoice!=0)
+											{
+												cout<<"1.Insert First\n2.Insert Last\n3.Insert At Position\n4.Delete First\n5.Delete Last\n6.Delete At Position\n7.Display LL\n8.Count Elements\n0.Exit\n";
+												cout<<"----------------------------\n";
+												cout<<"Enter your choice\n";
+												cin>>iChoice;
+												switch(iChoice)
+												{
+													case 1 : cout<<"Enter a string that you want to insert in the linked list\n";
+															 getline(cin,str);
+															 getline(cin,str);
+															 bRet = obj.InsertFirst(str);
+															 if(bRet==TRUE)
+															 {
+																cout<<"-------------------------------------------\n";
+																cout<<"Element added to linked list successfully\n";
+																cout<<"-------------------------------------------\n";
+															 } 
+															 else
+															 {
+																 cout<<"-------------------------------------------\n";
+																 cout<<"Error : Unable add element into linked list\n";
+																 cout<<"-------------------------------------------\n";
+															 }
+															 break;
+
+													case 2 : cout<<"Enter a string that you want to insert in the linked list\n";
+															 getline(cin,str);
+															 getline(cin,str);
+															 bRet = obj.InsertLast(str);
+															 if(bRet==TRUE)
+															 {
+																cout<<"-------------------------------------------\n";
+																cout<<"Element added to linked list successfully\n";
+																cout<<"-------------------------------------------\n";
+															 } 
+															 else
+															 {
+																 cout<<"-------------------------------------------\n";
+																 cout<<"Error : Unable add element into linked list\n";
+																 cout<<"-------------------------------------------\n";
+															 }
+															 break;
+
+													case 3 : cout<<"Enter a string that you want to insert in the linked list\n";
+															 getline(cin,str);
+															 getline(cin,str);
+															 cout<<"Enter position at which you want to insert element\n";
+															 cin>>iPos;
+															 bRet = obj.InsertAtPos(str,iPos);
 															 if(bRet==TRUE)
 															 {
 																cout<<"-------------------------------------------\n";
