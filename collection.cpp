@@ -145,6 +145,39 @@ class DoublyLinkedList
 				return FALSE;
 			}
 		}
+		BOOL DeleteFirst()
+		{
+			int iFlag = 0;
+			if(Head==NULL)
+			{
+				cout<<"-------------------------------------------\n";
+				cout<<"Linked List is empty\n";
+				cout<<"-------------------------------------------\n";
+				return FALSE;
+			}
+			else if(Head->next==NULL)
+			{
+				Head = NULL;
+				iFlag = 1;
+			}
+			else
+			{
+				struct Node2<T> * Temp = Head;
+				Head = Head->next;
+				Head->prev = NULL;
+				Temp->next = NULL;
+				delete(Temp);
+				iFlag = 1;
+			}
+			if(iFlag==1)
+			{
+				return TRUE;
+			}
+			else
+			{
+				return FALSE;
+			}
+		}
 		void Display()
 		{
 			cout<<"-------------------------------------------\n";
@@ -1209,6 +1242,20 @@ int main()
 															 }
 															 break;
 
+													case 4:  bRet = obj.DeleteFirst();
+															 if(bRet==TRUE)
+															 {
+																cout<<"-------------------------------------------\n";
+																cout<<"Element deleted from linked list successfully\n";
+																cout<<"-------------------------------------------\n";
+															 } 
+															 else
+															 {
+																 cout<<"-------------------------------------------\n";
+																 cout<<"Error : Unable delete element from linked list\n";
+																 cout<<"-------------------------------------------\n";
+															 }
+															 break;
 													case 7: obj.Display();
 															break;
 												}
